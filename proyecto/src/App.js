@@ -7,6 +7,7 @@ import Chart2023 from "./screens/Chart2023/Chart2023"
 import Home from "./screens/Home/Home"
 import Favoritos from "./screens/Favoritos/Favoritos"
 
+
 function App() {
   return (
     <React.Fragment>
