@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Link} from 'react-router-dom';
+import "./styles.css"
 
 const opciones = [
     {
@@ -30,10 +31,10 @@ class Header extends Component {
     render() {
         return(
             <nav>
-                <img src= "./public/img/logo.png" alt="logo" > </img>
+               <img className="header" src="./img/logo.png" alt="logo"></img>
                 {opciones.map((elm, idx) => <li>
-                    <Link to={elm.path}>
-                        {elm.nombre}
+                    <Link to={elm.path }>
+                        {elm.nombre }
                     </Link>
                 </li>)
             }
