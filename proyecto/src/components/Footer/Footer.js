@@ -17,7 +17,6 @@ class Footer extends Component {
                     <h5>Julieta Da Forno</h5>
                     <h5>|</h5>
                     <h5>Isabel Blaquier</h5>
-
                 </div>
             </>
         )
