@@ -1,0 +1,9 @@
+.footer_index{
+    display: flex;
+    background-color:rgba(39, 52, 77, 0.884);
+    color: aliceblue;
+    justify-content: right;   
+}
+.footer_content{
+    margin: 10px;
+}
