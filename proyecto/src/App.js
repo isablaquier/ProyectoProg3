@@ -17,9 +17,7 @@ function App() {
         <Route path='/chart-2023'  component= {Chart2023} />
         <Route path='/generos'  component= {Generos} />
       </Switch>
-    <div className="App">
-    </div>
-
+      <Home />
     </React.Fragment>
   );
 }
