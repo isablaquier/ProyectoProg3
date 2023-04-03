@@ -6,7 +6,7 @@ class ListadoGenero extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            generos: [],
+          //  generos: [],
         }
     }
  /* hice cosas que estan a medias
@@ -27,7 +27,8 @@ class ListadoGenero extends Component {
     render() {
         return (
             <React.Fragment>
-             
+
+             <ContenedorGenero/>
             </React.Fragment>
         )
     }
