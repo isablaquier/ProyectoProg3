@@ -24,7 +24,7 @@ class Buscador extends Component{
     }
     render(){
         return(
-            <form onSubmit={(event)=> this.evitarSubmit(event)}>
+            <form className = 'nav'onSubmit={(event)=> this.evitarSubmit(event)}>
                <div>
                <label> Busca lo que quieras</label>
                 </div> 
