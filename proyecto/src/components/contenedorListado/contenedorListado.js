@@ -1,24 +1,30 @@
-import React, {Components} from 'react';
+
+import React, {Component} from 'react';
+import ListadoMusica from '../ListadoMusica/ListadoMusica';
 import './styles.css'
 
-class contenedorListado extends Component {
+class ContenedorListado extends Component {
     constructor(props){
         super(props)
-        this.state={
-            tracks:[],
-            albums:[]
-        }
     }
-
 
     render(){
-        return(<article>
-            <h4>{this.props.}</h4>
-            <p>${info[i].artist.name}</p>
-            <img src="${info[i].album.cover}"/>
-            </article>
-
+        return(
+            <section className="content">
+                {
+                    this.props.data.map((track, idx) =>
+                    <article>
+                        <ListadoMusica
+                    info = {track}
+                    />
+                    </article>
+                    
+                    )
+                }
+            </section>  
         )
     }
+
+
 }
-export default contenedorListado
+export default ContenedorListado

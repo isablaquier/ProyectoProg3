@@ -1,0 +1,9 @@
+.content{
+    background-color:rgb(36, 35, 35);
+    margin: 25px;
+    padding: 50px;
+    color:darkgrey;
+    border-radius: 20px;
+    border: solid 5px rgb(0, 0, 0);
+
+}
