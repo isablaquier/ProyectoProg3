@@ -21,3 +21,4 @@ class contenedorListado extends Component {
         )
     }
 }
+export default contenedorListado

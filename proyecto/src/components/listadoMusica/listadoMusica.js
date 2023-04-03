@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './styles.css'
-
+import contenedorListado from '../contenedorListado/contenedorListado';
 class listadoMusica extends Component {
     constructor(props){
         super(props)
@@ -27,9 +27,9 @@ class listadoMusica extends Component {
     render(){
         return(
             <section className="content">
-            <h3 class="h3_index">Canciones</h3>
-            <section class="canciones">
-            </section>
+                {
+                    this.state.tracks.map((track, idx) => )
+                }
             </section>  
         )
     }
