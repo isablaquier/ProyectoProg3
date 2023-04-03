@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
-
-class Home extends Components {
+import Buscador from '../../components/Buscador/Buscador';
+class Home extends Component {
     render(){
         return (
             <>
+                            <Buscador/>
             </>
         )
     }
 }
+export default Home;
