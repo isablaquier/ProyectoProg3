@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
 import ContenedorGenero from "../ContenedorGenero/ContenedorGenero"
 
 class ListadoGenero extends Component {
@@ -9,7 +9,7 @@ class ListadoGenero extends Component {
             generos: [],
         }
     }
-
+ /* hice cosas que estan a medias
     componentDidMount()
     {
         fetch(`https://thingproxy.freeboard.io/fetch/https://developers.deezer.com/api/explorer`)
@@ -20,17 +20,14 @@ class ListadoGenero extends Component {
             }
         ))
         .catch(error => console.log('El error fue' + error))
-    }
-
+    } */
 
 
 
     render() {
         return (
             <React.Fragment>
-             <article>
-                <h1>{this.props.generos.name}</h1>
-             </article>
+             
             </React.Fragment>
         )
     }

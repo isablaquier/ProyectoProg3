@@ -26,6 +26,7 @@ function App() {
       <ListadoGenero />
       <Footer />
     </React.Fragment>
+   
   );
 }
 

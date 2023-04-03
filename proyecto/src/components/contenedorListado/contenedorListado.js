@@ -1,7 +1,7 @@
 import React, {Components} from 'react';
 import './styles.css'
 
-class contenedorListado extends Component {
+class ContenedorListado extends Component {
     constructor(props){
         super(props)
         this.state={
