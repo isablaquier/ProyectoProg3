@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Home extends Component {
+class Chart2023 extends Component {
     render(){
         return (
             <>
@@ -9,4 +9,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default Chart2023
