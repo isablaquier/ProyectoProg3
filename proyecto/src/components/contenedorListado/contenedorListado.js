@@ -13,7 +13,7 @@ class contenedorListado extends Component {
 
     render(){
         return(<article>
-            <h4>{this.props.}</h4>
+            <h4>{this.props}</h4>
             <p>${info[i].artist.name}</p>
             <img src="${info[i].album.cover}"/>
             </article>

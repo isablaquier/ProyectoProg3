@@ -7,6 +7,8 @@ import Chart2023 from "./screens/Chart2023/Chart2023"
 import Home from "./screens/Home/Home"
 import Favoritos from "./screens/Favoritos/Favoritos"
 import Footer from "./components/Footer/Footer"
+import ContenedorGenero from "./components/ContenedorGenero/ContenedorGenero";
+import ListadoGenero from "./components/ListadoGenero/ListadoGenero"
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path='/generos'  component= {Generos} />
       </Switch>
       <Home />
+      <ContenedorGenero />
+      <ListadoGenero />
       <Footer />
     </React.Fragment>
   );
