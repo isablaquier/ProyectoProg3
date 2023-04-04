@@ -31,11 +31,8 @@ class Header extends Component {
     render() {
         return(
             <nav>
-<<<<<<< HEAD
                 <img src= "./public/img/logo.png" alt="logo" />
-=======
                <img className="header" src="./img/logo.png" alt="logo"></img>
->>>>>>> 7482476498ab310ce141de2134503648b9b8a1a3
                 {opciones.map((elm, idx) => <li>
                     <Link to={elm.path }>
                         {elm.nombre }
