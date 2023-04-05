@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './styles.css'
 class Buscador extends Component{
     constructor(props){
         super(props)
@@ -24,7 +25,7 @@ class Buscador extends Component{
     }
     render(){
         return(
-            <form className = 'nav'onSubmit={(event)=> this.evitarSubmit(event)}>
+            <form className = 'formulario' onSubmit={(event)=> this.evitarSubmit(event)}>
                <div>
                <label> Busca lo que quieras</label>
                 </div> 

@@ -9,22 +9,23 @@ import Favoritos from "./screens/Favoritos/Favoritos"
 import Footer from "./components/Footer/Footer"
 import ContenedorGenero from "./components/ContenedorGenero/ContenedorGenero";
 import ListadoGenero from "./components/ListadoGenero/ListadoGenero"
+import PaginaBuscador from "./screens/PaginaBuscador/PaginaBuscador";
 
 
 function App() {
   return (
     <React.Fragment>
       <Header />
+      <PaginaBuscador/>
       <Switch>
         <Route path='/' exact={true} component= {Home} />
         <Route path='/favoritos' component= {Favoritos} />
         <Route path='/chart-2023'  component= {Chart2023} />
         <Route path='/generos'  component= {Generos} />
       </Switch>
-      <Home />
       <ContenedorGenero />
       <ListadoGenero />
-      <Footer />
+      <Footer/>
     </React.Fragment>
    
   );

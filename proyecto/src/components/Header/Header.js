@@ -30,10 +30,9 @@ class Header extends Component {
     }
     render() {
         return(
-            <nav>
-                <img src= "./public/img/logo.png" alt="logo" />
-               <img className="header" src="./img/logo.png" alt="logo"></img>
-                {opciones.map((elm, idx) => <li>
+            <nav className= 'nav'>
+               <img className="logo" src="./img/logo.png" alt="logo"></img>
+                {opciones.map((elm, idx) => <li className = 'content_nav a'>
                     <Link to={elm.path }>
                         {elm.nombre }
                     </Link>
