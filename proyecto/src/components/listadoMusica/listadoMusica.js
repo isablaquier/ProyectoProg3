@@ -1,13 +1,35 @@
-import React from 'react'
+import React, {Component} from 'react';
 import './styles.css'
 
-function ListadoMusica (props) {
-    
+class ListadoMusica extends Component {
+    constructor (props){
+        super(props) 
+        this.state = {
+           
+        }
+
+    }
+
+
+    cambiarTexto(){
+        if(this.state.texto === 'Ver mas'){
+            this.setState({
+                texto: 'Ver menos',
+                clase:'show'
+            })
+        } else {
+            this.setState({
+                texto: 'Ver mas',
+                clase:'hidden'
+            })
+        }
+    }
+    render(){
         return(
         <article>
-            <h4>{props.info.title}</h4>
-            <p>{props.info.descripcion}</p>
-            <img src={props.info.md5_image} />
+            <h4>{this.state.info.title}</h4>
+            <p>{this.state.info.descripcion}</p>
+            <img src={this.state.info.md5_image} />
             <p className='more'>Ver más</p> 
             <section className='extra'>
             </section>
@@ -15,5 +37,6 @@ function ListadoMusica (props) {
             </article>
 
         )
+}
 }
 export default ListadoMusica
