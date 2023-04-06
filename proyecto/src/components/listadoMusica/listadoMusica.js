@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 import './styles.css'
 
 class ListadoMusica extends Component {
     constructor (props){
         super(props) 
         this.state = {
-           data:props.infoCancion
+           data:props.infoCancion,
+            texto: 'Ver más',
+            clase: 'hidden'
+           
         }
 
     }
@@ -59,10 +63,11 @@ class ListadoMusica extends Component {
     render(){
         return(
         <article>
+            <Link to={`/unalbum/id${this.state.info.id}`}></Link>
             <h4>{this.state.info.title}</h4>
-            <p>{this.state.info.descripcion}</p>
+            <p className={this.state.clase}>{this.state.info.descripcion}</p>
             <img src={this.state.info.md5_image} />
-            <p className='more'>Ver más</p> 
+            <a onClick={()=> this.cambiarTexto()}className='more'>{this.state.texto}</a> 
             <section className='extra'>
             </section>
             <button classNAME= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>

@@ -7,3 +7,9 @@
     border: solid 5px rgb(0, 0, 0);
 
 }
+p.hidden{
+    display:none
+}
+p.show{
+    display:block
+}
