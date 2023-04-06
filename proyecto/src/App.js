@@ -10,6 +10,8 @@ import Footer from "./components/Footer/Footer"
 import ContenedorGenero from "./components/ContenedorGenero/ContenedorGenero";
 import ListadoGenero from "./components/ListadoGenero/ListadoGenero"
 import PaginaBuscador from "./screens/PaginaBuscador/PaginaBuscador";
+import VerTodas from "./screens/VerTodas/VerTodas";
+import Album from "./screens/Album/Album";
 
 
 function App() {
@@ -22,6 +24,9 @@ function App() {
         <Route path='/favoritos' component= {Favoritos} />
         <Route path='/chart-2023'  component= {Chart2023} />
         <Route path='/generos'  component= {Generos} />
+        <Route path='/vertodas' component={VerTodas}/>
+        <Route path='/unalbum/id/:id' component= {Album}/>
+
       </Switch>
       <ContenedorGenero />
       <ListadoGenero />
