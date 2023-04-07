@@ -16,14 +16,14 @@ class ListadoMusica extends Component {
 
 
     cambiarTexto(){
-        if(this.state.texto === 'Ver mas'){
+        if(this.state.texto === 'Ver más'){
             this.setState({
                 texto: 'Ver menos',
                 clase:'show'
             })
         } else {
             this.setState({
-                texto: 'Ver mas',
+                texto: 'Ver más',
                 clase:'hidden'
             })
         }
@@ -65,13 +65,17 @@ class ListadoMusica extends Component {
         <article>
             <Link to={`/unalbum/id${this.props.info.id}`}></Link>
             <h4>{this.props.info.title}</h4>
-            <p className={this.props.info.clase}>{this.props.info.descripcion}</p>
-            <img src={this.props.info.album.cover} />
-            <a onClick={()=> this.cambiarTexto()}className='more'>{this.props.info.texto}</a> 
+            <p>{this.props.info.artist.name}</p>
+            <a onClick={()=> this.cambiarTexto()}>{this.state.texto}</a>
+            <br>
+            </br>
+            <p className={this.state.clase}> Duración: {this.props.info.duration} minutos</p>
+            <img src={this.props.info.album.cover}/>
             <section className='extra'>
             </section>
+            <br></br>
             <button className= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
-            <button classNamw= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
+            <button className= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
             <p className='delete'>Borrar</p>
             </article>
 

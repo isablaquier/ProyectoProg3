@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
 //import Buscador from '../../components/Buscador/Buscador';
 //import Header from '../../components/Header/Header';
+import VerTodasCanciones from '../VerTodasCanciones/VerTodasCanciones';
 class Home extends Component {
     constructor(props){
         super(props)
@@ -31,6 +32,7 @@ class Home extends Component {
         console.log(this.state.tracks)
         return (
             <>
+
             <section className="content">
             <h3 className="h3_index">Canciones</h3>
             {
@@ -40,10 +42,11 @@ class Home extends Component {
                  <Link to='/vertodasCanciones'> 
                 <p>Ver Todas</p>
             </Link>
-                <ContenedorListado data={this.state.tracks}/>      
+                <ContenedorListado data={this.state.tracks}/>     
             </section>
             }
         </section>
+            
   
         {/* <section className="content">                                    
             <h3 className="h3_index">Géneros</h3>

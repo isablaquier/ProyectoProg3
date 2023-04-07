@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import ListadoMusica from '../ListadoMusica/ListadoMusica';
 import './styles.css'
+import VerTodasCanciones from '../../screens/VerTodasCanciones/VerTodasCanciones';
 
 class ContenedorListado extends Component {
     constructor(props){
@@ -17,7 +18,6 @@ class ContenedorListado extends Component {
                     <article>
                         <ListadoMusica
                     info = {track}
-                    
                     />
                     </article>
                     

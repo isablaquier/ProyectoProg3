@@ -1,9 +1,12 @@
 .content{
-    background-color:rgb(36, 35, 35);
+    background-color:rgb(134, 157, 161);
     margin: 25px;
     padding: 50px;
-    color:darkgrey;
+    color:rgb(35, 34, 52);
     border-radius: 20px;
-    border: solid 5px rgb(0, 0, 0);
+    border: solid 5px rgb(66, 94, 112);
 
+}
+.nombrepag{
+    font-family: 'Righteous', cursive;
 }
