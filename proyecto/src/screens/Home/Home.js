@@ -14,18 +14,18 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/tracks')
+        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
         .then(res => res.json())
         .then(data => this.setState({
             tracks: data.tracks.data
         }))
         .catch(err => console.log()) // el segundo fetch con la otra lista
 
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/tracks')
-        .then(res => res.json())
-        .then(data => this.setState({
-           tracks: data.tracks.data
-        }))
+        //fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/tracks')
+        //.then(res => res.json())
+        //.then(data => this.setState({
+        //   tracks: data.tracks.data
+        //}))
     }
     render(){
         return (
@@ -41,7 +41,7 @@ class Home extends Component {
             }
         </section>
   
-        <section className="content">                                    
+        {/* <section className="content">                                    
             <h3 className="h3_index">Géneros</h3>
             <Link> 
                 <p>Ver Todas</p>
@@ -54,7 +54,7 @@ class Home extends Component {
                 <ContenedorListado data={this.state.tracks}/>      
             </section>
             }
-        </section> 
+        </section>  */}
 
                     
             </>

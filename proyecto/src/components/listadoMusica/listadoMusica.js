@@ -8,7 +8,7 @@ class ListadoMusica extends Component {
         this.state = {
            data:props.infoCancion,
             texto: 'Ver más',
-            clase: 'hidden'
+            clase: 'hidden',
            
         }
 
@@ -63,15 +63,15 @@ class ListadoMusica extends Component {
     render(){
         return(
         <article>
-            <Link to={`/unalbum/id${this.state.info.id}`}></Link>
-            <h4>{this.state.info.title}</h4>
-            <p className={this.state.clase}>{this.state.info.descripcion}</p>
-            <img src={this.state.info.md5_image} />
-            <a onClick={()=> this.cambiarTexto()}className='more'>{this.state.texto}</a> 
+            <Link to={`/unalbum/id${this.props.info.id}`}></Link>
+            <h4>{this.props.info.title}</h4>
+            <p className={this.props.info.clase}>{this.props.info.descripcion}</p>
+            <img src={this.props.info.album.cover} />
+            <a onClick={()=> this.cambiarTexto()}className='more'>{this.props.info.texto}</a> 
             <section className='extra'>
             </section>
-            <button classNAME= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
-            <button classNAME= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
+            <button className= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
+            <button classNamw= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
             <p className='delete'>Borrar</p>
             </article>
 
