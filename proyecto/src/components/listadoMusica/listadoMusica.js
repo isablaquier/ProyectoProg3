@@ -72,7 +72,6 @@ class ListadoMusica extends Component {
             </section>
             <button classNAME= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
             <button classNAME= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
-
             <p className='delete'>Borrar</p>
             </article>
 
