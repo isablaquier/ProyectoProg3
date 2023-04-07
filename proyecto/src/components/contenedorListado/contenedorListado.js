@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import ListadoMusica from '../ListadoMusica/ListadoMusica';
+import ListadoMusica from '../ListadoMusica/listadoMusica';
 import './styles.css'
 
 class ContenedorListado extends Component {
@@ -9,6 +9,7 @@ class ContenedorListado extends Component {
     }
 
     render(){
+        
         return(
             <section className="content">
                 {
@@ -16,6 +17,7 @@ class ContenedorListado extends Component {
                     <article>
                         <ListadoMusica
                     info = {track}
+                    key={idx}
                     />
                     </article>
                     

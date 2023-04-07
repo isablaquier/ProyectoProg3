@@ -6,7 +6,7 @@ class ListadoMusica extends Component {
     constructor (props){
         super(props) 
         this.state = {
-           data:props.infoCancion,
+           data:props.info,
             texto: 'Ver más',
             clase: 'hidden'
            
@@ -63,7 +63,7 @@ class ListadoMusica extends Component {
     render(){
         return(
         <article>
-            <Link to={`/unalbum/id${this.state.info.id}`}></Link>
+            <Link to={`/unalbum/id${this.state.info.data.id}`}></Link>
             <h4>{this.state.info.title}</h4>
             <p className={this.state.clase}>{this.state.info.descripcion}</p>
             <img src={this.state.info.md5_image} />
