@@ -12,6 +12,7 @@ import ListadoGenero from "./components/ListadoGenero/ListadoGenero"
 import PaginaBuscador from "./screens/PaginaBuscador/PaginaBuscador";
 import VerTodas from "./screens/VerTodas/VerTodas";
 import Album from "./screens/Album/Album";
+import NotFound from "./components/NotFound/NotFound";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Route path='/generos'  component= {Generos} />
         <Route path='/vertodas' component={VerTodas}/>
         <Route path='/unalbum/id/:id' component= {Album}/>
-
+        <Route component={NotFound}/>
       </Switch>
       <ContenedorGenero />
       <ListadoGenero />

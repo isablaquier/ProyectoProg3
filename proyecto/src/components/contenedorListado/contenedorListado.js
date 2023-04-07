@@ -9,6 +9,7 @@ class ContenedorListado extends Component {
     }
 
     render(){
+        
         return(
             <section className="content">
                 {
@@ -16,6 +17,7 @@ class ContenedorListado extends Component {
                     <article>
                         <ListadoMusica
                     info = {track}
+                    
                     />
                     </article>
                     

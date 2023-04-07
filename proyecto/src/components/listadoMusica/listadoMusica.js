@@ -6,7 +6,7 @@ class ListadoMusica extends Component {
     constructor (props){
         super(props) 
         this.state = {
-           data:props.infoCancion,
+           data:props.info,
             texto: 'Ver más',
             clase: 'hidden',
            
