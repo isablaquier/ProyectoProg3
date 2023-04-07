@@ -37,7 +37,7 @@ class Home extends Component {
             this.state.tracks.length < 0 ?
             <h3>Estoy trayendo la data</h3> :    
             <section className="canciones">
-                 <Link to='/vertodas'> 
+                 <Link to='/vertodasCanciones'> 
                 <p>Ver Todas</p>
             </Link>
                 <ContenedorListado data={this.state.tracks}/>      
@@ -47,7 +47,7 @@ class Home extends Component {
   
         {/* <section className="content">                                    
             <h3 className="h3_index">Géneros</h3>
-            <Link> 
+            <Link to= '/veertodasGenero'> 
                 <p>Ver Todas</p>
             </Link>
             

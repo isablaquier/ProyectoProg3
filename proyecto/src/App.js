@@ -10,7 +10,8 @@ import Footer from "./components/Footer/Footer"
 import ContenedorGenero from "./components/ContenedorGenero/ContenedorGenero";
 import ListadoGenero from "./components/ListadoGenero/ListadoGenero"
 import PaginaBuscador from "./screens/PaginaBuscador/PaginaBuscador";
-import VerTodas from "./screens/VerTodas/VerTodas";
+import VerTodasGenero from "./screens/VerTodasGenero/VerTodasGenero";
+import VerTodasCanciones from "./screens/VerTodasCanciones/VerTodasCanciones";
 import Album from "./screens/Album/Album";
 import NotFound from "./components/NotFound/NotFound";
 
@@ -25,7 +26,8 @@ function App() {
         <Route path='/favoritos' component= {Favoritos} />
         <Route path='/chart-2023'  component= {Chart2023} />
         <Route path='/generos'  component= {Generos} />
-        <Route path='/vertodas' component={VerTodas}/>
+        <Route path='/vertodasGenero' component={VerTodasGenero}/>
+        <Route path='/vertodasCanciones' component ={VerTodasCanciones}/>
         <Route path='/unalbum/id/:id' component= {Album}/>
         <Route component={NotFound}/>
       </Switch>
