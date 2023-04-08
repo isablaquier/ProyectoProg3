@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 export default class Cancion extends Component {
     constructor (props){
         super(props) 
@@ -8,6 +8,13 @@ export default class Cancion extends Component {
         }
 
     }
+
+    componentDidMount(){
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.state.data.id}`)
+        .then(data => data.json())
+        .then( info => this.setState({info: info}))
+    }
+
     addFavourites(){
         if(localStorage.getItem('favoritos')){
             let info = this.state.data
@@ -44,7 +51,7 @@ export default class Cancion extends Component {
         return(
             <article>
                 <Link to={`/unalbum/id${this.state.info.data.id}`}></Link>
-                <h4>{this.state.info.title}</h4>
+                <h4>{this.state.info.data.title}</h4>
                 <p className={this.state.clase}>{this.state.info.descripcion}</p>
                 <img src={this.state.info.md5_image} />
                 <a onClick={()=> this.cambiarTexto()}className='more'>{this.state.texto}</a> 

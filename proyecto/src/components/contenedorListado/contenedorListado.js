@@ -14,10 +14,11 @@ class ContenedorListado extends Component {
         return(
             <section className="content">
                 {
-                    this.props.data.map((track, idx) =>
+                    this.props.data.map((track, i) =>
                     <article>
                         <ListadoMusica
                     info = {track}
+                    key={i}
                     />
                     </article>
                     
