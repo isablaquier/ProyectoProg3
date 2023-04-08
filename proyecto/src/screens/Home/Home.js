@@ -42,7 +42,8 @@ class Home extends Component {
                  <Link to='/vertodasCanciones'> 
                 <p>Ver Todas</p>
             </Link>
-                <ContenedorListado data={this.state.tracks}/>     
+                <ContenedorListado data={this.state.tracks}/>   
+                  
             </section>
             }
         </section>
