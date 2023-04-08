@@ -32,11 +32,11 @@ class Header extends Component {
         return(
             <nav className= 'nav'>
                <img className="logo" src="./img/logo.png" alt="logo"></img>
-                {opciones.map((elm, idx) => <li className = 'content_nav a'>
-                    <Link to={elm.path }>
+                {opciones.map((elm, idx) => 
+                    <Link key={idx} to={elm.path }>
                         {elm.nombre }
                     </Link>
-                </li>)
+                )
             }
             </nav>
             

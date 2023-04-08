@@ -14,6 +14,8 @@ import VerTodasGenero from "./screens/VerTodasGenero/VerTodasGenero";
 import VerTodasCanciones from "./screens/VerTodasCanciones/VerTodasCanciones";
 import Album from "./screens/Album/Album";
 import NotFound from "./components/NotFound/NotFound";
+import Cancion from "./screens/Cancion/Cancion";
+
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
         <Route path='/vertodasCanciones' component ={VerTodasCanciones}/>
         <Route path='/unalbum/id/:id' component= {Album}/>
         <Route component={NotFound}/>
+        <Route path='/cancion/id/:id' component={Cancion} />
       </Switch>
       <ContenedorGenero />
       <ListadoGenero />

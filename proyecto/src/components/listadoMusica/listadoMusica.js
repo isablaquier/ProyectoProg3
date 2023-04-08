@@ -35,12 +35,15 @@ class ListadoMusica extends Component {
             favoritos.push(info)
             let arrayString= JSON.stringify(favoritos)
             localStorage.setItem('favoritos',arrayString)
+            console.log(localStorage.getItem('favoritos'))
         }else if(!localStorage.getItem('favoritos')){
             let favoritos = [];
             let info= this.state.data
             favoritos.push(info)
             let arrayString= JSON.stringify(favoritos)
             localStorage.setItem('favoritos',arrayString)
+
+            console.log(localStorage.getItem('favoritos'))
         }
        
     }
@@ -64,7 +67,7 @@ class ListadoMusica extends Component {
         return(
         <article>
             <Link to={`/unalbum/id${this.props.info.id}`}></Link>
-            <h4>{this.props.info.title}</h4>
+            <Link to={`/cancion/id/${this.props.info.id}`}>{this.props.info.title}</Link>
             <p>{this.props.info.artist.name}</p>
             <a onClick={()=> this.cambiarTexto()}>{this.state.texto}</a>
             <br>
@@ -76,7 +79,6 @@ class ListadoMusica extends Component {
             <br></br>
             <button className= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
             <button className= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
-            <p className='delete'>Borrar</p>
             </article>
 
         )
