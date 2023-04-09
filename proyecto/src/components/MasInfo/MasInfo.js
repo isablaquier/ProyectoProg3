@@ -27,12 +27,12 @@ class MasInfo extends Component {
                 {
                     this.state.info.map((artist, i) =>
                    
-            <article key={artist + i}>           
+            <article className= 'show' key={artist + i}>           
             <Link to={`/unalbum/id${this.state.info.id}`}></Link>
             <h4>{this.state.info.name}</h4>
             <br>
             </br>
-            <img src={this.state.info.picture_small}/>
+            <img src={this.state.info.picture_small} alt='foto'/>
             <section className='extra'>
             </section>
             <br></br>

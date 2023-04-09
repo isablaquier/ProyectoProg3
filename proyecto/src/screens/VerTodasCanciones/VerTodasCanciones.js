@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
 import MasInfo from '../../components/MasInfo/MasInfo';
 class VerTodasCanciones extends Component {
@@ -29,7 +28,7 @@ class VerTodasCanciones extends Component {
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
-            <p onClick={()=> <MasInfo/>}><h2>Cargar más información</h2></p>
+            <p onClick={()=> <MasInfo/>}>Cargar más información</p>
             <ContenedorListado data={this.state.tracks}/>
             </>  
             }
