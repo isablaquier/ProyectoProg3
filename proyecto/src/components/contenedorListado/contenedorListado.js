@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import ListadoMusica from '../ListadoMusica/ListadoMusica';
 import './styles.css'
 import VerTodasCanciones from '../../screens/VerTodasCanciones/VerTodasCanciones';
+import ListadoAlbum from '../ListadoAlbum/ListadoAlbum';
 
 class ContenedorListado extends Component {
     constructor(props){
@@ -13,8 +14,10 @@ class ContenedorListado extends Component {
         
         return(
             <section className="content">
+                <section>
+    
                 {
-                    this.props.data.map((track, i) =>
+                    this.props.tracks.map((track, i) =>
                     <article>
                         <ListadoMusica
                     info = {track}
@@ -24,6 +27,24 @@ class ContenedorListado extends Component {
                     
                     )
                 }
+                </section>
+
+                <section>
+                    <h2>Albums</h2>
+                {
+                    this.props.albums.map((album, i) =>
+                    <article>
+                        <ListadoAlbum
+                    info = {album}
+                    key={i}
+                    />
+                    </article>
+                    
+                    )
+                }
+                </section>
+                
+
             </section>  
 
 

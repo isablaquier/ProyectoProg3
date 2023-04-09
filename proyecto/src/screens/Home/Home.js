@@ -22,14 +22,14 @@ class Home extends Component {
         }))
         .catch(err => console.log()) // el segundo fetch con la otra lista
 
-        /*fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/tracks')
+        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums?index=0&limit=9')
         .then(res => res.json())
         .then(data => this.setState({
-           tracks: data.tracks.data
-        })) */
+           albums: data.data
+        })) 
     }
     render(){
-        console.log(this.state.tracks)
+        console.log(this.state.albums)
         return (
             <>
 
@@ -42,14 +42,14 @@ class Home extends Component {
                  <Link to='/vertodasCanciones'> 
                 <p>Ver Todas</p>
             </Link>
-                <ContenedorListado data={this.state.tracks}/>   
+                <ContenedorListado albums={this.state.albums} tracks={this.state.tracks}/>   
                   
             </section>
             }
         </section>
             
   
-        {/* <section className="content">                                    
+        { /*<section className="content">                                    
             <h3 className="h3_index">Géneros</h3>
             <Link to= '/veertodasGenero'> 
                 <p>Ver Todas</p>
