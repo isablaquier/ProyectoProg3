@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
 //import Buscador from '../../components/Buscador/Buscador';
 //import Header from '../../components/Header/Header';
-import VerTodasCanciones from '../VerTodasCanciones/VerTodasCanciones';
+//import VerTodasCanciones from '../VerTodasCanciones/VerTodasCanciones';
 class Home extends Component {
     constructor(props){
         super(props)
@@ -15,10 +15,10 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
+        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks')
         .then(res => res.json())
         .then(data => this.setState({
-            tracks: data.tracks.data
+            tracks: data.data
         }))
         .catch(err => console.log()) // el segundo fetch con la otra lista
 
@@ -36,14 +36,14 @@ class Home extends Component {
             <section className="content">
             <h3 className="h3_index">Canciones</h3>
             {
-            this.state.tracks.length < 0 ?
-            <h3>Estoy trayendo la data</h3> :    
+            this.state.tracks.length === 0 ?
+            <h3>Cargando...</h3> :    
             <section className="canciones">
                  <Link to='/vertodasCanciones'> 
                 <p>Ver Todas</p>
             </Link>
                 <ContenedorListado data={this.state.tracks}/>   
-                  
+
             </section>
             }
         </section>

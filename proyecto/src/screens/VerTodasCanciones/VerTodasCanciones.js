@@ -24,11 +24,15 @@ class VerTodasCanciones extends Component {
     render(){
         return(
             <>
+            {
+            this.state.tracks.length === 0 ?
+            <h3>Cargando...</h3> :  
+            <>
             <h1>Ver Todas</h1>
-            <a onClick={()=> <MasInfo/>}><h2>Cargar más información</h2></a>
+            <p onClick={()=> <MasInfo/>}><h2>Cargar más información</h2></p>
             <ContenedorListado data={this.state.tracks}/>
-
-            
+            </>  
+            }
             </>
             
         )

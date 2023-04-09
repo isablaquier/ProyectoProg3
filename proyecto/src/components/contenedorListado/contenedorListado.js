@@ -15,7 +15,7 @@ class ContenedorListado extends Component {
             <section className="content">
                 {
                     this.props.data.map((track, i) =>
-                    <article>
+                    <article key= {track + i}>
                         <ListadoMusica
                     info = {track}
                     key={i}

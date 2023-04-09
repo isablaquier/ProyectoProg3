@@ -1,44 +1,49 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
-
+import './styles.css'
 
 class MasInfo extends Component {
     constructor (props){
         super(props) 
         this.state = {
-           info:props.info,          
+           info:[],         
         }
 
     }
 
+
     componentDidMount(){
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/track')
+        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists')
          .then(res => res.json())
          .then(data => this.setState({
-             info: data.tracks.data
+             info: data.data
          }))
          .catch(err => console.log())}
   
              
     render(){
         return(
-        <article>
-            <Link to={`/unalbum/id${this.props.info.id}`}></Link>
-            <h4>{this.props.info.title}</h4>
-            <p>{this.props.info.artist.name}</p>
-            <a onClick={()=> this.cambiarTexto()}>{this.state.texto}</a>
+            <section className="content">
+                {
+                    this.state.info.map((artist, i) =>
+                   
+            <article key={artist + i}>           
+            <Link to={`/unalbum/id${this.state.info.id}`}></Link>
+            <h4>{this.state.info.name}</h4>
             <br>
             </br>
-            <p className={this.state.clase}> Duración: {this.props.info.duration} minutos</p>
-            <img src={this.props.info.album.cover}/>
+            <img src={this.state.info.picture_small}/>
             <section className='extra'>
             </section>
             <br></br>
             <button className= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
             <button className= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
             <p className='delete'>Borrar</p>
-            </article>
-
+            </article>                   
+                 )
+                }
+            </section> 
+        
         )
 }
 }
