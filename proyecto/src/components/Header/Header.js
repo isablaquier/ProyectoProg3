@@ -12,12 +12,12 @@ const opciones = [
         path: '/favoritos'
     },
     {
-        nombre:'Chart 2023',
-        path:'/chart-2023'
+        nombre:'Cancion',
+        path:'/cancion'
     },
     {
-        nombre: 'Generos',
-        path: '/generos'
+        nombre: 'Album',
+        path: '/album'
     }
 ]
 

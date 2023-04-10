@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+
 export default class Cancion extends Component {
     constructor (props){
         super(props) 
         this.state = {
-           data:props.info,
+           data:props.info, 
         }
 
-    }
+    } 
 
     componentDidMount(){
         fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.state.data.id}`)
@@ -57,8 +58,8 @@ export default class Cancion extends Component {
                 <a onClick={()=> this.cambiarTexto()}className='more'>{this.state.texto}</a> 
                 <section className='extra'>
                 </section>
-                <button classNAME= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
-                <button classNAME= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
+                <button className= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
+                <button className= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
                 </article>
     
             )

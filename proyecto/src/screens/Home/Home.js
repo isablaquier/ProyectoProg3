@@ -47,7 +47,7 @@ class Home extends Component {
             }
             </section>
 
-                    
+                                       
             </>
         )
     }
