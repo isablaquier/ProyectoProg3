@@ -46,25 +46,7 @@ class Home extends Component {
                   
             </section>
             }
-        </section>
-            
-  
-        { /*<section className="content">                                    
-            <h3 className="h3_index">Géneros</h3>
-            <Link to= '/veertodasGenero'> 
-                <p>Ver Todas</p>
-            </Link>
-            
-            {
-            this.state.tracks.length < 0 ?
-            <h3>Estoy trayendo la data</h3> :    
-            <section className="canciones">
-                <ContenedorListado data={this.state.tracks}/>      
-            </section>
-            }
-        </section>  */}
-
-                    
+        </section>                    
             </>
         )
     }
