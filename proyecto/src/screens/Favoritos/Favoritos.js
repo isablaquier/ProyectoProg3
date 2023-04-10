@@ -9,17 +9,30 @@ this.state={
     }
     componentDidMount(){
         let storage = localStorage.getItem('favoritos')
-        let favoritos = JSON.parse(storage)
-        this.setState({favoritos: favoritos})
+        if(storage !== null){
+            let storageAArray = JSON.parse(storage)
+            Promise.all(
+                storageAArray.map(id => {
+                    return(
+                        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=20${id}`)
+                        .then(resp => resp.json())
+                        .then(data => data)
+                    )
+                })
+            )
+            .then(data => this.setState({
+                favoritos: data
+            }))
+            .catch(err => console.log(err))
 
-        
-       
+
+        }
     }
     render(){
         
             if(this.state.favoritos.length > 0){
                 return (  <>
-                <ContenedorListado data={this.state.favoritos}/>
+                <ContenedorListado info={this.state.favoritos}/>
                 </>)
             }
           else{

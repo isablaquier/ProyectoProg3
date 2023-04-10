@@ -9,7 +9,7 @@ class ListadoMusica extends Component {
            data:props.info,
             texto: 'Ver más',
             clase: 'hidden',
-    
+    info:[],
      esFavorito: false
               
         }

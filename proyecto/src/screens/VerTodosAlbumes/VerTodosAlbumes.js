@@ -6,7 +6,8 @@ class VerTodosAlbumes extends Component {
         super(props)
         this.state={
             albums:[],
-            info:[]
+            info:[],
+            esFavorito: false
         }
 
     }
