@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import ListadoMusica from '../ListadoMusica/ListadoMusica';
 import './styles.css'
 import VerTodasCanciones from '../../screens/VerTodasCanciones/VerTodasCanciones';
-import ListadoAlbum from '../ListadoAlbum/ListadoAlbum';
 import {Link} from 'react-router-dom'
 
 class ContenedorListado extends Component {

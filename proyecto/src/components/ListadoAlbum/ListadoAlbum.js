@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import './styles.css'
 
 
-export default class ListadoAlbum extends Component {
+class ListadoAlbum extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: props.info ,//por la linea 36 del ContenedorListado
+            data:props.info ,//por la linea 36 del ContenedorListado
             texto: 'Ver más',
             clase: 'hidden',
             
@@ -80,11 +80,11 @@ export default class ListadoAlbum extends Component {
             <section className="content">
             <article>
                 <div>
-                    <img src={this.state.data.cover}></img>
+                    <img src={this.props.info.cover}></img>
                 </div>
                 <div>
-                    <h3>{this.state.data.title}</h3>
-                    <p className={this.state.clase}>{`artista: ${this.state.data.artist.name}, explicit lyrics: ${this.state.data.explicit_lyrics}`}</p>
+                    <h3>{this.props.info.title}</h3>
+                    <p className={this.state.clase}>{`artista: ${this.props.info.artist.name}, explicit lyrics: ${this.props.info.explicit_lyrics}`}</p>
                     <a onClick={() => this.cambiarTexto()}>{this.state.texto}</a>
 
                     <button className='boton' onClick={item => this.anhadirFav()}>Añadir a Favoritos</button>
@@ -95,3 +95,4 @@ export default class ListadoAlbum extends Component {
         )
     }
 }
+export default ListadoAlbum

@@ -35,7 +35,7 @@ class VerTodosAlbumes extends Component {
         
         
     llamarALaApi(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}&index=${this.state.index}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?limit=10&offset=${this.state.offset}&index=${this.state.index}`)
         .then(res => res.json())
         .then(data => this.setState({
             albums: this.state.albums.concat(data.data),
@@ -57,7 +57,7 @@ class VerTodosAlbumes extends Component {
             <h1>Ver Todas</h1>
             <Buscador actualizador={(data)=> this.actualizadorDeEstado(data)}
             fuente= {this.state.backup}/>
-            <ContenedorListadoAlbum info={this.state.albums}/>
+            <ContenedorListadoAlbum data={this.state.albums}/>
             <button onClick={()=> this.llamarALaApi()}>Cargar más información</button>
             </>  
             }
