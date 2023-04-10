@@ -16,14 +16,14 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks?limit=20')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=20')
         .then(res => res.json())
         .then(data => this.setState({
             tracks: data.data
         }, ()=> console.log(this.state.tracks)))
         .catch(err => console.log()) // el segundo fetch con la otra lista
 
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums?index=0&limit=9')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=9')
         .then(res => res.json())
         .catch(err => console.log())
         .then(data => this.setState({

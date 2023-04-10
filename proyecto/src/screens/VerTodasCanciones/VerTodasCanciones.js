@@ -12,7 +12,7 @@ class VerTodasCanciones extends Component {
 
     }
     componentDidMount(){
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
         .then(res => res.json())
         .then(data => this.setState({
             tracks: data.data
@@ -27,7 +27,7 @@ class VerTodasCanciones extends Component {
     }
 
     llamarALaApi(){
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
         .then(res => res.json())
         .then(data => this.setState({
             tracks: this.state.tracks.concat(data.data)
@@ -45,7 +45,7 @@ class VerTodasCanciones extends Component {
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
-            <p onClick={()=> <MasInfo/>}>Cargar más información</p>
+            <p onClick={()=> this.llamarALaApi}>Cargar más información</p>
             <ContenedorListado data={this.state.tracks}/>
             </>
             } 

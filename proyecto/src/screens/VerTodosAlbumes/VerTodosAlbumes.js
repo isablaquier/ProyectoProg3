@@ -11,7 +11,7 @@ class VerTodosAlbumes extends Component {
 
     }
     componentDidMount(){
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums?index=0&limit=9')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=9')
         .then(res => res.json())
         .then(data => this.setState({
             albums: data.data

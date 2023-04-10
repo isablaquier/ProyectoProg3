@@ -19,7 +19,7 @@ this.state={
         
             if(this.state.favoritos.length > 0){
                 return (  <>
-                <ContenedorListado info={this.state.favoritos}/>
+                <ContenedorListado data={this.state.favoritos}/>
                 </>)
             }
           else{
