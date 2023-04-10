@@ -65,6 +65,7 @@ class ListadoMusica extends Component {
 
     render(){
         return(
+            <section className= 'content'>
         <article>
             <Link to={`/unalbum/id${this.props.info.id}`}></Link>
             <Link to={`/cancion/id/${this.props.info.id}`}>{this.props.info.title}</Link>
@@ -80,6 +81,7 @@ class ListadoMusica extends Component {
             <button className= 'boton' onClick={item => this.addFavourites()}>Añadir a Favoritos</button>
             <button className= 'boton' onClick={item => this.removeItem()}> Eliminar a Favoritos</button>
             </article>
+            </section>
 
         )
 }

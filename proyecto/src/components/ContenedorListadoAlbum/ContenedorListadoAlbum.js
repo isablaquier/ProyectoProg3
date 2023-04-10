@@ -1,30 +1,27 @@
-
 import React, {Component} from 'react';
 import ListadoMusica from '../ListadoMusica/ListadoMusica';
-import './styles.css'
 import VerTodasCanciones from '../../screens/VerTodasCanciones/VerTodasCanciones';
 import ListadoAlbum from '../ListadoAlbum/ListadoAlbum';
 import {Link} from 'react-router-dom'
 
-class ContenedorListado extends Component {
+class ContenedorListadoAlbum extends Component {
     constructor(props){
         super(props)
     }
 
     render(){
-        
         return(
-            <section className="content">
+            <section className= 'content'>
                 <section>
-                <h2>Canciones</h2>
-                <Link to='/vertodasCanciones'> 
+                    <h2>Albums</h2>
+                    <Link to='/vertodosÁlbumes'> 
                 <p>Ver Todas</p>
-                </Link>
+            </Link>
                 {
-                    this.props.tracks.map((track, i) =>
+                    this.props.albums.map((album, i) =>
                     <article>
-                        <ListadoMusica
-                    info = {track}
+                        <ListadoAlbum
+                    info = {album}
                     key={i}
                     />
                     </article>
@@ -32,13 +29,8 @@ class ContenedorListado extends Component {
                     )
                 }
                 </section>
-
-            </section>  
-
-
+                </section>
         )
     }
-
-
 }
-export default ContenedorListado
+export default ContenedorListadoAlbum

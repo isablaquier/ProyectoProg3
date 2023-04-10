@@ -5,6 +5,7 @@ import ContenedorListado from '../../components/ContenedorListado/ContenedorList
 //import Buscador from '../../components/Buscador/Buscador';
 //import Header from '../../components/Header/Header';
 //import VerTodasCanciones from '../VerTodasCanciones/VerTodasCanciones';
+import ContenedorListadoAlbum from '../../components/ContenedorListadoAlbum/ContenedorListadoAlbum';
 class Home extends Component {
     constructor(props){
         super(props)
@@ -22,47 +23,29 @@ class Home extends Component {
         }))
         .catch(err => console.log()) // el segundo fetch con la otra lista
 
-        /*fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/tracks')
+        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums?index=0&limit=9')
         .then(res => res.json())
+        .catch(err => console.log())
         .then(data => this.setState({
-           tracks: data.tracks.data
-        })) */
+           albums: data.data
+        })) 
     }
     render(){
-        console.log(this.state.tracks)
+        console.log(this.state.albums)
         return (
             <>
 
-            <section className="content">
-            <h3 className="h3_index">Canciones</h3>
+            <section>
             {
             this.state.tracks.length === 0 ?
             <h3>Cargando...</h3> :    
-            <section className="canciones">
-                 <Link to='/vertodasCanciones'> 
-                <p>Ver Todas</p>
-            </Link>
-                <ContenedorListado data={this.state.tracks}/>   
-
+            <section className="canciones">    
+                <ContenedorListado tracks={this.state.tracks} />
+                <ContenedorListadoAlbum albums={this.state.albums} />      
             </section>
+            
             }
-        </section>
-            
-  
-        {/* <section className="content">                                    
-            <h3 className="h3_index">Géneros</h3>
-            <Link to= '/veertodasGenero'> 
-                <p>Ver Todas</p>
-            </Link>
-            
-            {
-            this.state.tracks.length < 0 ?
-            <h3>Estoy trayendo la data</h3> :    
-            <section className="canciones">
-                <ContenedorListado data={this.state.tracks}/>      
             </section>
-            }
-        </section>  */}
 
                     
             </>

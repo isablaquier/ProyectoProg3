@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
 
 class Album extends Component {
     constructor(props){
@@ -14,6 +15,7 @@ class Album extends Component {
         .then(data => this.setState({
             album: data
         }))
+        .catch(error => console.log('El error es' + error))
     }
 
     render() {

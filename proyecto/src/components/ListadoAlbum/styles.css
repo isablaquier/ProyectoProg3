@@ -7,13 +7,3 @@
     border: solid 5px rgb(66, 94, 112);
 
 }
-p.hidden{
-    display:none
-}
-p.show{
-    display:block
-}
-.canciones{
-    display: flex;
-    flex-direction: row;
-}
