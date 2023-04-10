@@ -21,7 +21,9 @@ class ContenedorListado extends Component {
                 <p>Ver Todas</p>
                 </Link>
                 {
-                    this.props.tracks.map((track, i) =>
+                    this.props.data.length < 0 ?
+                    <h1>Cargando..</h1> :
+                    this.props.data.map((track, i) =>
                     <article>
                         <ListadoMusica
                     info = {track}

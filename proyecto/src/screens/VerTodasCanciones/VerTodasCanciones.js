@@ -6,17 +6,34 @@ class VerTodasCanciones extends Component {
         super(props)
         this.state={
             tracks:[],
-            info:[]
+            info:[],
+            offset:10
         }
 
     }
     componentDidMount(){
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
         .then(res => res.json())
         .then(data => this.setState({
-            tracks: data.tracks.data
+            tracks: data.data
+        }, ()=> console.log(this.state.tracks)))
+        .catch(err => console.log())
+    }
+    
+    traerMas(){
+        this.setState({
+            offset: this.state.offset + 10
+        }, () => this.llamarALaApi())
+    }
+
+    llamarALaApi(){
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
+        .then(res => res.json())
+        .then(data => this.setState({
+            tracks: this.state.tracks.concat(data.data)
         }))
-        .catch(err => console.log())} 
+        .catch(err => console.log())
+    }
         
               
         
@@ -30,8 +47,9 @@ class VerTodasCanciones extends Component {
             <h1>Ver Todas</h1>
             <p onClick={()=> <MasInfo/>}>Cargar más información</p>
             <ContenedorListado data={this.state.tracks}/>
-            </>  
-            }
+            </>
+            } 
+        
             </>
             
         )
