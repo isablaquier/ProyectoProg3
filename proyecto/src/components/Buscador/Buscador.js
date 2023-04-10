@@ -10,13 +10,20 @@ class Buscador extends Component{
     evitarSubmit(event){
         event.preventDefault()
     }
+    metodoQueFiltra(texto,arrayFuente){
+        let filtrado = arrayFuente.filter((element) => element.title.toLowerCase().includes(texto.toLowerCase()))// pasa por todos los elemntos y valida lo que le pidamos
+        return filtrado
+    }
 
     guardarValor(event){
         this.setState(
             {
                 valorInput:event.target.value
-            },
-            ()=>console.log('Este es el estado que ve el setState: ${this.state.valorInput}')
+            }, () =>{
+                let filtro = this.metodoQueFiltra(this.state.valorInput, this.props.fuente)
+                this.props.actualizador(filtro)
+            }
+            //()=>console.log('Este es el estado que ve el setState: ${this.state.valorInput}')
         )
     }
 
