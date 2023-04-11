@@ -1,38 +1,51 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
 import ContenedorListado from '../../components/ContenedorListado/contenedorListado';
 import MasInfo from '../../components/MasInfo/MasInfo';
+=======
+import { Link } from 'react-router-dom';
+import Buscador from '../../components/Buscador/Buscador';
+import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
+
+>>>>>>> 97d589d3be0833a3f1f4b1d99a1fd85e8b9dddff
 class VerTodasCanciones extends Component {
     constructor(props){
         super(props)
         this.state={
             tracks:[],
             info:[],
-            offset:10
+            offset:10,
+            index:0,
+            backup: []
         }
 
     }
+    actualizadorDeEstado(data){
+        this.setState({
+            tracks:data
+        })
+    }
     componentDidMount(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}&index=${this.state.index}`)
         .then(res => res.json())
         .then(data => this.setState({
-            tracks: data.data
+            tracks: data.data,
+            backup: data.data,
+            index: this.state.index + 10
         }, ()=> console.log(this.state.tracks)))
         .catch(err => console.log())
     }
-    
-    traerMas(){
-        this.setState({
-            offset: this.state.offset + 10
-        }, () => this.llamarALaApi())
-    }
 
     llamarALaApi(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks?limit=10&offset=${this.state.offset}&index=${this.state.index}`)
         .then(res => res.json())
         .then(data => this.setState({
-            tracks: this.state.tracks.concat(data.data)
+            tracks: this.state.tracks.concat(data.data),
+            index: this.state.index + 10
+
         }))
         .catch(err => console.log())
+        
     }
         
               
@@ -45,8 +58,11 @@ class VerTodasCanciones extends Component {
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
-            <p onClick={()=> this.llamarALaApi}>Cargar más información</p>
+            <Buscador actualizador={(data)=> this.actualizadorDeEstado(data)}
+            fuente= {this.state.backup}
+            />
             <ContenedorListado data={this.state.tracks}/>
+            <button onClick={()=> this.llamarALaApi()}>Cargar más información</button>
             </>
             } 
         

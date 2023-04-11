@@ -23,7 +23,7 @@ class Home extends Component {
         }, ()=> console.log(this.state.tracks)))
         .catch(err => console.log()) // el segundo fetch con la otra lista
 
-        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=9')
+        fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?limit=20')
         .then(res => res.json())
         .catch(err => console.log())
         .then(data => this.setState({
@@ -42,7 +42,7 @@ class Home extends Component {
             <section className="canciones">    
                <ContenedorListado data={this.state.tracks} />
                
-                <ContenedorListadoAlbum albums={this.state.albums} />      
+                <ContenedorListadoAlbum data={this.state.albums} />      
             </section>
             
             }

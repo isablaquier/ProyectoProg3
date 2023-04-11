@@ -18,11 +18,13 @@ class ContenedorListadoAlbum extends Component {
                 <p>Ver Todas</p>
             </Link>
                 {
-                    this.props.albums.map((album, i) =>
-                    <article>
+                    this.props.data.length < 0 ?
+                    <h1>Cargando...</h1>:
+                    this.props.data.map((album, i) =>
+                    <article key={i}>
                         <ListadoAlbum
                     info = {album}
-                    key={i}
+                    
                     />
                     </article>
                     

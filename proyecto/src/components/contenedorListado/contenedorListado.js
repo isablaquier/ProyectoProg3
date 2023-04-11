@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import ListadoMusica from '../ListadoMusica/ListadoMusica';
 import './styles.css'
 import VerTodasCanciones from '../../screens/VerTodasCanciones/VerTodasCanciones';
-import ListadoAlbum from '../ListadoAlbum/ListadoAlbum';
 import {Link} from 'react-router-dom'
 
 class ContenedorListado extends Component {
@@ -24,10 +23,10 @@ class ContenedorListado extends Component {
                     this.props.data.length < 0 ?
                     <h1>Cargando..</h1> :
                     this.props.data.map((track, i) =>
-                    <article>
+                    <article key={i}>
                         <ListadoMusica
                     info = {track}
-                    key={i}
+                    
                     />
                     </article>
                     
