@@ -21,10 +21,10 @@ class ContenedorListadoAlbum extends Component {
                     this.props.data.length < 0 ?
                     <h1>Cargando...</h1>:
                     this.props.data.map((album, i) =>
-                    <article>
+                    <article key={i}>
                         <ListadoAlbum
                     info = {album}
-                    key={i}
+                    
                     />
                     </article>
                     

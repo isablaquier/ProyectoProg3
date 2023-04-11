@@ -23,10 +23,10 @@ class ContenedorListado extends Component {
                     this.props.data.length < 0 ?
                     <h1>Cargando..</h1> :
                     this.props.data.map((track, i) =>
-                    <article>
+                    <article key={i}>
                         <ListadoMusica
                     info = {track}
-                    key={i}
+                    
                     />
                     </article>
                     

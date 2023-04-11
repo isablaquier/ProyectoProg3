@@ -1,20 +1,24 @@
 import React, {Component} from 'react'
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado'
+import ContenedorListadoAlbum from '../../components/ContenedorListadoAlbum/ContenedorListadoAlbum'
 
 class Favoritos extends Component {
     constructor(props){
 super(props)
 this.state={
-    favoritos:[]
+    favoritos:[],
+    favoritosAlbum: []
 }
     }
     componentDidMount(){
         let Array = []
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('favoritos');
+        console.log(storage);
         if(storage !== null){
           
         //Recorro lista de Favoritos
-        let listaFavoritos = JSON.parse(storage) 
+        let listaFavoritos = JSON.parse(storage);
+        console.log(listaFavoritos);
         listaFavoritos.map((id)=>{
             //Llamo a cada uno de los ids
 
@@ -25,25 +29,37 @@ this.state={
                  let data = info //Te te esta guardon un objeto con toda la info
                  Array = this.state.favoritos
                  Array.push(data)
-                this.setState({Favoritos:Array})
+                this.setState({favoritos:Array}, console.log(this.state.favoritos))
             })
         
         })}
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=9'  `)
+        let storageAlbum = localStorage.getItem('favoritosAlbum')
+        console.log(storageAlbum);
+        let arrayAlbum = []
+        if(storageAlbum !== null){
+            let listaFavoritosAlbum = JSON.parse(storageAlbum)
+            listaFavoritosAlbum.map((id)=>{
+         fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
         .then(data => data.json())
         .then( info => {
+            console.log(info);
             //Guardo la info en un array
              let data = info //Te te esta guardon un objeto con toda la info
-             Array = this.state.favoritosAlbum
-             Array.push(data)
-            this.setState({favoritosAlbum:Array})
+             arrayAlbum = this.state.favoritosAlbum
+             arrayAlbum.push(data);
+            this.setState({favoritosAlbum: arrayAlbum}, console.log(this.state.favoritosAlbum))
         })
+        })
+        }
     }    
     render(){
-            
-            if(this.state.favoritos.length > 0){
+            console.log(this.state);
+            if(this.state.favoritos.length > 0 || (this.state.favoritosAlbum > 0 && this.state.favoritosAlbum)){
+                console.log(this.state);
                 return (  <>
                 <ContenedorListado data={this.state.favoritos}/>
+                <ContenedorListadoAlbum data={this.state.favoritosAlbum}/>
+
                 </>)
         
             }

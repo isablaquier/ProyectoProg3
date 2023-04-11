@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './styles.css'
+
+
 
 export default class Cancion extends Component {
     constructor (props){
         super(props) 
         this.state = {
-           data:props.info, 
-           id: props.match.params.id,
+            data:props, 
+            id: props.match.params.id,
 
         }
 
     } 
 
     componentDidMount(){
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.state.data.id}`)
-        .then(data => data.json())
-        .then( info => this.setState({info: info}))
+        console.log(this.state);
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.state.id}`)
+        .then(data => data.json())        
+        .then( info =>{
+            this.setState({info: info}, console.log(this.state.info));
+            console.log(this.state);
+        })
+
     }
 
     anhadirFav(id){
@@ -52,20 +60,24 @@ export default class Cancion extends Component {
         
       }
     render() {
-
+        console.log(this.state)
         return(
+            this.state.info ? 
+
             <article>
-                <Link to={`/unalbum/id${this.state.info.data.id}`}></Link>
-                <h4>{this.state.info.data.title}</h4>
-                <p className={this.state.clase}>{this.state.info.descripcion}</p>
-                <img src={this.state.info.md5_image} />
+                <Link to={`/unalbum/id${this.state.info.album.id}`}></Link>
+                <h4>{this.state.info.title}</h4>
+                <p> {this.state.info.artist.name} </p>
+                <p> {this.state.info.album.title} </p>
+                <iframe src={this.state.info.preview}/>
+                <img src={this.state.info.album.cover_medium} />
                 <a onClick={()=> this.cambiarTexto()}className='more'>{this.state.texto}</a> 
                 <section className='extra'>
                 </section>
-                <button className= 'boton' onClick={item => this.anhadirFav(this.props.info.id)}> {this.state.esFavorito ? 'Quitar de favoritos' : 'Añadir a favoritos' } </button>
+                <button className= 'boton' onClick={item => this.anhadirFav(this.state.info.id)}> {this.state.esFavorito ? 'Quitar de favoritos' : 'Añadir a favoritos' } </button>
                 </article>
-    
+            : ""
             )
-    
+
   }
 }
