@@ -12,12 +12,12 @@ const opciones = [
         path: '/favoritos'
     },
     {
-        nombre:'Cancion',
-        path:'/cancion'
+        nombre:'VerTodasCanciones',
+        path:'/vertodasCanciones'
     },
     {
-        nombre: 'Album',
-        path: '/album'
+        nombre: 'VerTodosAlbumes',
+        path: '/vertodosAlbumes'
     }
 ]
 

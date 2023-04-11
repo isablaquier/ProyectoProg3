@@ -69,6 +69,7 @@ class Album extends Component {
             console.log(this.state.album);
             return (
                 <div>
+                  <Link to={`/`}/>
                     <img src={this.state.info.cover_medium} alt={this.state.info.title} />
                     <h2>{this.state.info.title}</h2>
                     <h3>{this.state.info.artist.name}</h3>

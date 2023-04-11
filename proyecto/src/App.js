@@ -11,7 +11,7 @@ import Album from "./screens/Album/Album";
 import NotFound from "./components/NotFound/NotFound";
 import Cancion from "./screens/Cancion/Cancion";
 import VerTodosAlbumes from "./screens/VerTodosAlbumes/VerTodosAlbumes";
-//  habria que poner esto pero rompe con algo <Route path= '/cancion' component= {Cancion}/>
+
 
 
 
@@ -24,10 +24,8 @@ function App() {
         <Route path='/' exact={true} component= {Home} />
         <Route path='/favoritos' component= {Favoritos} />
         <Route path='/vertodasCanciones' component ={VerTodasCanciones}/>
-        <Route path='/vertodosÁlbumes' component = {VerTodosAlbumes}/>
-        <Route path='/unalbum/id/:id' component= {Album}/>
+        <Route path='/vertodosAlbumes' component = {VerTodosAlbumes}/>
         <Route path= '/album' component= {Album}/>
-        <Route path='/vertodasCanciones' component ={VerTodasCanciones}/>
         <Route path='/unalbum/id/:id' exact={true} component= {Album}/>
         <Route path='/cancion/id/:id' exact={true} component={Cancion} />
         <Route component={NotFound}/>
