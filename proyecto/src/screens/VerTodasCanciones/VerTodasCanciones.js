@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
+import ContenedorListado from '../../components/ContenedorListado/contenedorListado';
 import MasInfo from '../../components/MasInfo/MasInfo';
 class VerTodasCanciones extends Component {
     constructor(props){

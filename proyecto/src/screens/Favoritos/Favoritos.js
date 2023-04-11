@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ContenedorListado from '../../components/ContenedorListado/ContenedorListado'
+import ContenedorListado from '../../components/ContenedorListado/contenedorListado'
 class Favoritos extends Component {
     constructor(props){
 super(props)

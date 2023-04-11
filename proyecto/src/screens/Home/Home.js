@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 //import ListadoMusica from '../../components/listadoMusica/listadoMusica';
-import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
+import ContenedorListado from '../../components/ContenedorListado/contenedorListado';
 //import Buscador from '../../components/Buscador/Buscador';
 //import Header from '../../components/Header/Header';
 //import VerTodasCanciones from '../VerTodasCanciones/VerTodasCanciones';
