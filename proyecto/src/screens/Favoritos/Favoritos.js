@@ -28,10 +28,17 @@ this.state={
                 this.setState({Favoritos:Array})
             })
         
+        })}
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums?index=0&limit=9'  `)
+        .then(data => data.json())
+        .then( info => {
+            //Guardo la info en un array
+             let data = info //Te te esta guardon un objeto con toda la info
+             Array = this.state.favoritosAlbum
+             Array.push(data)
+            this.setState({favoritosAlbum:Array})
         })
-
-        }
-    }
+    }    
     render(){
             
             if(this.state.favoritos.length > 0){
