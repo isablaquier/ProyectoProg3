@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
-<<<<<<< HEAD
-import ContenedorListado from '../../components/ContenedorListado/contenedorListado';
-import MasInfo from '../../components/MasInfo/MasInfo';
-=======
 import { Link } from 'react-router-dom';
 import Buscador from '../../components/Buscador/Buscador';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
 
->>>>>>> 97d589d3be0833a3f1f4b1d99a1fd85e8b9dddff
 class VerTodasCanciones extends Component {
     constructor(props){
         super(props)

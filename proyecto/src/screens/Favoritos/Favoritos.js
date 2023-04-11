@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
-<<<<<<< HEAD
-import ContenedorListado from '../../components/ContenedorListado/contenedorListado'
-=======
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado'
 import ContenedorListadoAlbum from '../../components/ContenedorListadoAlbum/ContenedorListadoAlbum'
 
->>>>>>> 97d589d3be0833a3f1f4b1d99a1fd85e8b9dddff
 class Favoritos extends Component {
     constructor(props){
 super(props)

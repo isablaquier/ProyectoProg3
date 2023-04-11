@@ -25,7 +25,7 @@ function App() {
         <Route path='/favoritos' component= {Favoritos} />
         <Route path='/vertodasCanciones' component ={VerTodasCanciones}/>
         <Route path='/vertodosAlbumes' component = {VerTodosAlbumes}/>
-        <Route path= '/album' component= {Album}/>
+        
         <Route path='/unalbum/id/:id' exact={true} component= {Album}/>
         <Route path='/cancion/id/:id' exact={true} component={Cancion} />
         <Route component={NotFound}/>

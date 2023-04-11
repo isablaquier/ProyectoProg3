@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import './styles.css'
 
 
@@ -6,7 +7,7 @@ class ListadoAlbum extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data:props.info ,//por la linea 36 del ContenedorListado
+            data: props.info ,//por la linea 36 del ContenedorListado
             texto: 'Ver más',
             clase: 'hidden',
             
@@ -78,9 +79,9 @@ class ListadoAlbum extends Component {
         return (
             <section className="content">
             <article>
-                <div>
+                <Link to = {`/unalbum/id/${this.props.info.id}`}>
                     <img src={this.props.info.cover}></img>
-                </div>
+                </Link>
                 <div>
                     <h3>{this.props.info.title}</h3>
                     <p className={this.state.clase}>{`artista: ${this.props.info.artist.name}, explicit lyrics: ${this.props.info.explicit_lyrics}`}</p>

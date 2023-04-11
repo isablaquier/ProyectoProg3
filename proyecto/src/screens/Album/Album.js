@@ -4,58 +4,67 @@ class Album extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: props.match.params.id, //id: this.props.match.params.id
-            // album: ''
+            id: this.props.match.params.id, 
+            info: '',
+            esFavorito :false
         }
     }
 
     componentDidMount() {
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com//album/${this.state.id}`)
+      
+      console.log(this.state.id,'Fedeeefnjdnshjfdbsnhfdbhfdsbdfshhjbjbsjfbhjdfsbjkdsf')
+      //Busca la data
+      fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`)
             .then(response => response.json())
-            .then(data => this.setState({ info: data })) //album: data
+            .then(data => this.setState({ info: data })) //la guardas en el estado en la propiedad info del estado
             .catch(error => console.log('El error es' + error))
+            
+            //Dpendiendo si esta o no en favoritos queremos que diga quitar o agregar
+            
+            //agarramos la lista de favoritos
+            let storage = localStorage.getItem('favoritosAlbum')
+            let storageAArray = JSON.parse(storage)
+        
+            if(storageAArray !== null){
+              let estaEnElArray = storageAArray.includes(this.state.info.id)
+              //Esta en favoritos? Si esta pongamos la prop fav del estado en true -> quitar
+              if(estaEnElArray){
+                this.setState({
+                  esFavorito: true
+                })
+              }
+            }
+        
     }
 
-    componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
-        let storageAArray = JSON.parse(storage)
-    
-        if(storageAArray !== null){
-          let estaEnElArray = storageAArray.includes(this.props.info.id)
-          if(estaEnElArray){
-            this.setState({
-              esFavorito: true
-            })
-          }
-        }
-      }
     
       anhadirFav(id){
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('favoritosAlbum')
         //Sino esta esta en favoritos agregala 
         if (this.state.esFavorito == false) {
+          //si la lista esta vacia agregamos el id asi nomas
             if(storage === null){
                 let idEnArray = [id]
                 let arrayAString = JSON.stringify(idEnArray)
                 localStorage.setItem('favoritosAlbum', arrayAString)
-                
-          
-              } else {
+              } else {  //sino esta vacia nos traemos lo que sta y lo agregamos sobre eso
                 let deStringAArray = JSON.parse(storage) 
                 deStringAArray.push(id)
                 let arrayAString = JSON.stringify(deStringAArray)
                 localStorage.setItem('favoritosAlbum', arrayAString)
               }
-          
+          //actualizamos el estado
               this.setState({
                 esFavorito: true
               })  
         }
-        else{
+        else{ //si esta en favoritos entonces la quitamos
             let storageAArray = JSON.parse(storage)
+            //quitamos el id utilizando el metodo filter del array
             let filtro = storageAArray.filter((elm)=> elm !== id)
             let filtroAString = JSON.stringify(filtro)
             localStorage.setItem('favoritosAlbum', filtroAString)
+            //actualizamos el estado
             this.setState({
                 esFavorito: false
               })
@@ -64,11 +73,11 @@ class Album extends Component {
         
       }
     render() {
-        if (this.state.album) {
-            console.log(this.state.album);
+        if (this.state.info) {
+            console.log(this.state.info);
             return (
                 <div>
-                  <Link to={`/`}/>
+                  
                     <img src={this.state.info.cover_medium} alt={this.state.info.title} />
                     <h2>{this.state.info.title}</h2>
                     <h3>{this.state.info.artist.name}</h3>
@@ -81,7 +90,7 @@ class Album extends Component {
                             )
                         })}
                     </ul>
-                    <button className= 'boton' onClick={item => this.anhadirFav(this.props.info.id)}> {this.state.esFavorito ? 'Quitar de favoritos' : 'Añadir a favoritos' } </button>
+                    <button className= 'boton' onClick={item => this.anhadirFav(this.state.info.id)}> {this.state.esFavorito ? 'Quitar de favoritos' : 'Añadir a favoritos' } </button>
                 </div>
             )
         } else {
