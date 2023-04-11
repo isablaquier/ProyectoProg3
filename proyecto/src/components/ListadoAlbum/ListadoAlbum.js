@@ -42,37 +42,36 @@ class ListadoAlbum extends Component {
         
           anhadirFav(id){
             let storage = localStorage.getItem('favoritos')
-        
-            if(storage === null){
-              let idEnArray = [id]
-              let arrayAString = JSON.stringify(idEnArray)
-              localStorage.setItem('favoritos', arrayAString)
-        
-            } else {
-              let deStringAArray = JSON.parse(storage) 
-              deStringAArray.push(id)
-              let arrayAString = JSON.stringify(deStringAArray)
-              localStorage.setItem('favoritos', arrayAString)
+            //Sino esta esta en favoritos agregala 
+            if (this.state.esFavorito == false) {
+                if(storage === null){
+                    let idEnArray = [id]
+                   
+                    let arrayAString = JSON.stringify(idEnArray)
+                    localStorage.setItem('favoritosAlbum', arrayAString)
+              
+                  } else {
+                    let deStringAArray = JSON.parse(storage) 
+                    deStringAArray.push(id)
+                    let arrayAString = JSON.stringify(deStringAArray)
+                    localStorage.setItem('favoritosAlbum', arrayAString)
+                  }
+              
+                  this.setState({
+                    esFavorito: true
+                  })  
             }
-        
-            this.setState({
-              esFavorito: true
-            })
-          }
-          
-        
-          sacarFav(id){
-            let storage = localStorage.getItem('favoritos')
-            let storageAArray = JSON.parse(storage)
-            let filtro = storageAArray.filter((elm)=> elm !== id)
-            let filtroAString = JSON.stringify(filtro)
-            localStorage.setItem('favoritos', filtroAString)
-        
-            this.setState({
-              esFavorito: false
-            })
-        
-        
+            else{
+                let storageAArray = JSON.parse(storage)
+                let filtro = storageAArray.filter((elm)=> elm !== id)
+                let filtroAString = JSON.stringify(filtro)
+                localStorage.setItem('favoritosAlbum', filtroAString)
+                this.setState({
+                    esFavorito: false
+                  })
+              
+                }
+            
           }
 
     render() {
@@ -87,8 +86,7 @@ class ListadoAlbum extends Component {
                     <p className={this.state.clase}>{`artista: ${this.props.info.artist.name}, explicit lyrics: ${this.props.info.explicit_lyrics}`}</p>
                     <a onClick={() => this.cambiarTexto()}>{this.state.texto}</a>
 
-                    <button className='boton' onClick={item => this.anhadirFav()}>Añadir a Favoritos</button>
-                    <button className='boton' onClick={item => this.sacarFav()}> Eliminar de Favoritos</button>
+                    <button className= 'boton' onClick={item => this.anhadirFav(this.props.info.id)}> {this.state.esFavorito ? 'Quitar de favoritos' : 'Añadir a favoritos' } </button>
                 </div>
             </article>
             </section>

@@ -49,7 +49,6 @@ class ListadoMusica extends Component {
         if (this.state.esFavorito == false) {
             if(storage === null){
                 let idEnArray = [id]
-                console.log(idEnArray,'fede')
                 let arrayAString = JSON.stringify(idEnArray)
                 localStorage.setItem('favoritos', arrayAString)
           

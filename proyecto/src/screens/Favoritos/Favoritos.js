@@ -15,7 +15,6 @@ this.state={
           
         //Recorro lista de Favoritos
         let listaFavoritos = JSON.parse(storage) 
-        console.log(listaFavoritos,'lista')
         listaFavoritos.map((id)=>{
             //Llamo a cada uno de los ids
 
@@ -27,7 +26,6 @@ this.state={
                  Array = this.state.favoritos
                  Array.push(data)
                 this.setState({Favoritos:Array})
-                console.log(this.state.favoritos,'fede')                
             })
         
         })
@@ -40,6 +38,7 @@ this.state={
                 return (  <>
                 <ContenedorListado data={this.state.favoritos}/>
                 </>)
+        
             }
           else{
             return(
