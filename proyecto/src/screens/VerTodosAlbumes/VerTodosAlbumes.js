@@ -55,8 +55,7 @@ class VerTodosAlbumes extends Component {
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
-            <Buscador actualizador={(data)=> this.actualizadorDeEstado(data)}
-            fuente= {this.state.backup}/>
+           
             <ContenedorListadoAlbum data={this.state.albums}/>
             <button onClick={()=> this.llamarALaApi()}>Cargar más información</button>
             </>  

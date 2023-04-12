@@ -28,6 +28,17 @@
     font-family: 'Work Sans', sans-serif;
     background-repeat: no-repeat;
     background-position: right;
-    background-color:rgb(5, 9, 19 );
+   text-align: center;
 
+}
+.container{
+    display: flex;
+    justify-content: center;
+background-color: lightblue;
+    flex-direction: column;
+}
+.imagen{
+    width: 150px;
+    height: 150px;
+    align-self: center;
 }

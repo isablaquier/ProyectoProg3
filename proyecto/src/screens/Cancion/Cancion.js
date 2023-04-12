@@ -64,13 +64,15 @@ export default class Cancion extends Component {
         return(
             this.state.info ? 
 
-            <article>
+            <article className='container'>
                 <Link to={`/unalbum/id${this.state.info.album.id}`}></Link>
-                <h4>{this.state.info.title}</h4>
-                <p> {this.state.info.artist.name} </p>
-                <p> {this.state.info.album.title} </p>
+                <h4 className='body_track'>{this.state.info.title}</h4>
+                <p className='body_track'> {this.state.info.artist.name} </p>
+                <p className='body_track'> {this.state.info.album.title} </p>
+                <img className='imagen' src={this.state.info.album.cover_medium} />
+
                 <iframe src={this.state.info.preview}/>
-                <img src={this.state.info.album.cover_medium} />
+              
                 <a onClick={()=> this.cambiarTexto()}className='more'>{this.state.texto}</a> 
                 <section className='extra'>
                 </section>

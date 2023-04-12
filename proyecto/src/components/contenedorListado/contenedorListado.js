@@ -18,6 +18,7 @@ class ContenedorListado extends Component {
                 <h2>Canciones</h2>
                 <Link to='/vertodasCanciones'> 
                 <p>Ver Todas</p>
+                {console.log(this.props.data, 'dataa')}
                 </Link>
                 {
                     this.props.data.length < 0 ?

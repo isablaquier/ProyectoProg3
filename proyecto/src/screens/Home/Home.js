@@ -11,7 +11,10 @@ class Home extends Component {
         super(props)
         this.state = {
             albums:[],
-            tracks:[]
+            tracks:[],
+            resultadosDeBusqueda:[],
+            mensaje:'',
+            valor:''
         }
     }
 
@@ -30,16 +33,64 @@ class Home extends Component {
            albums: data.data
         })) 
     }
+    buscadorP(event) {
+        event.preventDefault();
+        if (this.state.valor === '') {
+            this.setState({
+                mensaje: 'No has escrito nada'
+            })
+        } else {
+            fetch(`https://api.deezer.com/search?q=${this.state.valor}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data,'buscador');
+                    this.setState({
+                        resultadosDeBusqueda: data.data
+                    });
+                    if (data.results.length === 0) {
+                        this.setState({
+                            mensaje: 'No se enontraron resultados'
+                        })
+
+                    }
+
+                })
+                .catch(error => console.log(error))
+        }
+    }
+
+    controlarCambios(event) {
+        this.setState(
+            {
+                valor: event.target.value,
+                mensaje: '',
+                resultadosDeBusqueda: []
+            },
+            () => console.log(event.target.value));
+    }
     render(){
         console.log(this.state.albums)
         return (
-            <>
 
+            <>
+           <div className="buscador-home">
+                    <h2>Busca acá:</h2>
+                    <form onSubmit={(event) => this.buscadorP(event)}>
+                        <input type="text" onChange={(event) => this.controlarCambios(event)} value={this.state.valor} />
+                        <button type="submit">Buscar</button>
+                    </form>
+                    <p>{this.state.mensaje}</p>
+                </div>
             <section>
             {
             this.state.tracks.length === 0 ?
             <h3>Cargando...</h3> :    
-            <section className="canciones">    
+            <section className="canciones">  
+             <div>
+             <h3>Resultados de Busqueda</h3>
+             {console.log(this.state.resultadosDeBusqueda, 'asdasd')}
+             <ContenedorListado  data={this.state.resultadosDeBusqueda} />)
+                </div> 
                <ContenedorListado data={this.state.tracks} />
                
                 <ContenedorListadoAlbum data={this.state.albums} />      
