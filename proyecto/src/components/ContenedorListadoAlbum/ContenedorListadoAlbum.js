@@ -14,7 +14,7 @@ class ContenedorListadoAlbum extends Component {
             <section className= 'content'>
                 <section>
                     <h2>Albums</h2>
-                    <Link to='/vertodosÁlbumes'> 
+                    <Link to='/vertodosAlbumes'> 
                 <p>Ver Todas</p>
             </Link>
                 {
