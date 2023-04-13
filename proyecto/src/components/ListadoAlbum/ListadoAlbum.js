@@ -84,7 +84,7 @@ class ListadoAlbum extends Component {
                 </Link>
                 <div>
                     <h3>{this.props.info.title}</h3>
-                    <p className={this.state.clase}>{`artista: ${this.props.info.artist.name}, explicit lyrics: ${this.props.info.explicit_lyrics}`}</p>
+                    <p className={this.state.clase}>{`artista: ${this.props.info.artist}, explicit lyrics: ${this.props.info.explicit_lyrics}`}</p>
                     <a onClick={() => this.cambiarTexto()}>{this.state.texto}</a>
 
                     <button className= 'boton' onClick={item => this.anhadirFav(this.props.info.id)}> {this.state.esFavorito ? 'Quitar de favoritos' : 'Añadir a favoritos' } </button>
