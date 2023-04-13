@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
-import Buscador from '../../components/Buscador/Buscador';
+import BuscadorFiltra from '../../components/BuscadorFiltra/BuscadorFiltra';
 import ContenedorListadoAlbum from '../../components/ContenedorListadoAlbum/ContenedorListadoAlbum';
 class VerTodosAlbumes extends Component {
     constructor(props){
@@ -51,11 +50,12 @@ class VerTodosAlbumes extends Component {
         return(
             <>
             {
-            this.state.albums.length === 0 ?
+            this.state.albums.length <= 0 ?
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
-           
+            <BuscadorFiltra actualizador={(data)=> this.actualizadorDeEstado(data)}
+            fuente= {this.state.backup}/>
             <ContenedorListadoAlbum data={this.state.albums}/>
             <button onClick={()=> this.llamarALaApi()}>Cargar más información</button>
             </>  

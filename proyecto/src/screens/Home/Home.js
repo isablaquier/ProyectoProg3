@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 //import ListadoMusica from '../../components/listadoMusica/listadoMusica';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
 //import Buscador from '../../components/Buscador/Buscador';
@@ -40,7 +39,7 @@ class Home extends Component {
                 mensaje: 'No has escrito nada'
             })
         } else {
-            fetch(`https://api.deezer.com/search?q=${this.state.valor}`)
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${this.state.valor}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data,'buscador');
@@ -87,9 +86,9 @@ class Home extends Component {
             <h3>Cargando...</h3> :    
             <section className="canciones">  
              <div>
-             <h3>Resultados de Busqueda</h3>
+             <h3>Resultados de Busqueda:</h3>
              {console.log(this.state.resultadosDeBusqueda, 'asdasd')}
-             <ContenedorListado  data={this.state.resultadosDeBusqueda} />)
+             <ContenedorListado  data={this.state.resultadosDeBusqueda} />
                 </div> 
                <ContenedorListado data={this.state.tracks} />
                
@@ -107,4 +106,3 @@ class Home extends Component {
 
 
 export default Home;
-

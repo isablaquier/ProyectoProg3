@@ -19,7 +19,6 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <PaginaBuscador/>
       <Switch>
         <Route path='/' exact={true} component= {Home} />
         <Route path='/favoritos' component= {Favoritos} />

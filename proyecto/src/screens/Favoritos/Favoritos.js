@@ -42,12 +42,18 @@ this.state={
          fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${id}`)
         .then(data => data.json())
         .then( info => {
-            console.log(info);
+            console.log(info,'info');
             //Guardo la info en un array
              let data = info //Te te esta guardon un objeto con toda la info
              arrayAlbum = this.state.favoritosAlbum
-             arrayAlbum.push(data);
-            this.setState({favoritosAlbum: arrayAlbum}, console.log(this.state.favoritosAlbum))
+
+             if(!data.error){
+                arrayAlbum.push(data);
+                console.log('No tengo error');
+                this.setState({favoritosAlbum: arrayAlbum})
+             }else{
+                console.log(data,'Si tengo error');
+             }
         })
         })
         }
