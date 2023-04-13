@@ -10,6 +10,7 @@ class ListadoAlbum extends Component {
             data: props.info ,//por la linea 36 del ContenedorListado
             texto: 'Ver más',
             clase: 'hidden',
+            esFavorito: false 
             
         }
     }

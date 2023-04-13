@@ -65,7 +65,7 @@ this.state={
             }
           else{
             return(
-                <h1> No tienes canciones en Favoritos</h1>
+                <h1> No tienes canciones o albums en Favoritos</h1>
             )
           }      
         
