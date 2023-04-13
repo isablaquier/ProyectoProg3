@@ -34,7 +34,7 @@ class Buscador extends Component{
         return(
             <form className = 'formulario' onSubmit={(event)=> this.evitarSubmit(event)}>
                <div>
-               <label> Busca lo que quieras</label>
+               <label>Busca lo que quieras</label>
                 </div> 
                 <div>
                 <input onChange={(event)=> this.guardarValor(event)} value={this.state.valorInput}/>

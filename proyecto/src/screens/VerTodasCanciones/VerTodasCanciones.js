@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import Buscador from '../../components/Buscador/Buscador';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
 
@@ -53,6 +52,7 @@ class VerTodasCanciones extends Component {
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
+            <Buscador/>
             
             <ContenedorListado data={this.state.tracks}/>
             <button onClick={()=> this.llamarALaApi()}>Cargar más información</button>

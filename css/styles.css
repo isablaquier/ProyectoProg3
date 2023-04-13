@@ -1,0 +1,750 @@
+
+/*j*/
+/*Index y detalle de canción*/
+*{
+    box-sizing: border-box;
+}
+.nombrepag{
+    font-family: 'Righteous', cursive;
+}
+.musik{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: azure;
+    font-size: 50px;
+}
+.logo{
+    border-radius: 50px;
+}
+.body_index{
+    font-family: 'Work Sans', sans-serif;
+    background-color:rgb(5, 9, 19 );
+}
+
+.container{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+
+}
+
+.content{
+    background-color:rgb(127, 178, 233);
+    margin: 25px;
+    padding: 50px;
+    color:darkgrey;
+    border-radius: 20px;
+    border: solid 5px rgb(0, 0, 0);
+
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    background-color:rgb(126, 174, 206);
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:aliceblue;
+}
+.content_nav{
+    color: aliceblue;
+    padding: 15px;
+}
+.h3_index{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.footer_index{
+    display: flex;
+    background-color:rgba(39, 52, 77, 0.884);
+    color: aliceblue;
+    justify-content: right;   
+}
+.footer_content{
+    margin: 10px;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.bg{
+    background-image: url("../img/musica3.jpg");
+}
+.index{
+    background-image: url("../img/musica3.jpg");
+}
+
+/*detalle de canción*/
+
+.main_track{
+    background-image: url("../img/musica3.jpg");
+}
+.detail_track{
+    font-size: 30px;
+}
+.detalle_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.detalle_content{
+    background-color: rgb(78, 109, 120);
+    padding: 90px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 5px rgb(235, 235, 242) solid;
+
+}
+
+.content_addsong{
+    background-color: rgb(38, 55, 70);
+    border: solid 3px rgb(23, 42, 58);
+    padding: 5px;
+    border-radius: 50px;
+    color: rgb(196, 205, 212);
+}
+
+.body_track{
+    font-family: 'Work Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color:rgb(5, 9, 19 );
+
+}
+
+/*j*/
+
+
+
+
+
+/*ff*/
+/*detallesdelgenero*/ /*genero*/ /*detalledeldisco*/
+
+
+/*genero*/
+.body_generos{
+        font-family: 'Work Sans', sans-serif;
+
+        background-repeat: no-repeat;
+        background-position: right;
+        background-color:rgb(5, 9, 19 )
+ }
+.fondo{
+    background-image: url(../img/musica3.jpg);
+}
+.sech1{
+    display: flex;
+    justify-content: center;
+}
+.arth1{
+    background-color: rgb(0, 0, 0);
+    margin: 30px;
+    border-radius: 20px;
+    padding-top: 5px;
+    border: 5px solid rgb(255, 255, 255);
+}
+.ffh1 {
+    color: rgb(220, 215, 215);
+    margin: 25px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.pgeneros{
+    font-size: 20px;
+    padding-top: 5px;
+    color: black;
+}
+.ffsection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.ffarticle{
+    background-color: rgb(0, 0, 0);
+    margin: 20px;
+    border-radius: 20px;
+    padding: 50px;
+    border: 5px solid rgb(255, 255, 255);
+    text-align: center;
+   
+   
+}
+
+
+/*detallesdelgenero*/
+
+.bodydetallegenero{
+    font-family: 'Work Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color:rgb(5, 9, 19 )
+}
+
+.secdg{
+    display: flex;
+    justify-content: center;
+}
+.artdg{
+    margin: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    border: 5px solid rgb(255, 255, 255);
+    background-color: black;
+}
+.Dtitulo {
+    color: rgb(220, 215, 215);
+    font-size: 50px;
+    text-align: center;
+}
+
+.sectionff{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+}
+
+.articleff{
+    background-color: rgb(0, 0, 0);
+    margin: 20px;
+    border-radius: 20px;
+    padding: 40px;
+    border: 5px solid rgb(255, 255, 255);
+
+}
+.section2ff{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.article2ff{
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 20px;
+    padding: 30px;
+    border: 5px solid rgb(160, 160, 160);
+    
+}
+.ffcul {
+    color: rgb(255, 255, 255);
+    list-style: none;
+    text-decoration: none;
+    font-size: 30px;
+}
+.pff{
+    text-align: center;
+    color: black;
+    font-size: 13px;
+}
+
+
+/*detallesdeldisco*/
+.bodydetalledisco{
+    font-family: 'Work Sans', sans-serif;
+   
+    background-size: 200px;
+    background-image: url();
+}
+.h5ff{
+    text-align: center;
+}
+.h1sec{
+    display: flex;
+    justify-content: center;
+
+}
+.h1art{
+    margin: 40px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 5px solid rgb(255, 255, 255);
+    background-color: black;
+}
+.h1ddd{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 40px;
+    
+}
+.spanff{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border: 5px solid white;
+    flex-wrap: wrap;
+    width: 600px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: black;
+    }
+.h2ff{
+        display: flex;
+        justify-content: center;
+        font-size: 35px;
+        }
+.h4ff{
+            text-align: center;
+            font-size: 20px;
+        }
+.h3ff{
+            text-align: center;
+        font-size: 25px;
+        }
+.imgdd{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.canciones{
+    display: flex;
+    flex-direction: column;
+}
+
+.canciones li {
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*tb*/
+
+/*playlist*/
+
+.body_pl{
+    font-family: 'Work Sans', sans-serif;
+    background-color:rgb(5, 9, 19 )
+}
+
+.sectpl_h2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.h2_pl{
+    color: azure;
+    font-size: 50px;}
+
+.m_pl{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-image: url(../img/musica3.jpg);
+
+}
+
+.sec_pl{
+    display: flex;
+    flex-direction: row;
+}
+
+.art_pl{
+    text-decoration: none;
+    list-style: none;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 30px;
+    border: 5px solid rgb(0, 0, 0);
+    padding: 10px;
+    background-color:rgb(47, 47, 87) ;
+    color: rgb(196, 205, 212);    
+
+}
+
+.pl_dt{
+    text-decoration: none;
+    color: rgb(196, 205, 212);    
+}
+    
+.artpl{
+    display: flex;
+}
+
+.playlistp{
+    display: inline;
+    padding: 10px;
+}
+
+.addsong_pl{
+    background-color: rgb(38, 55, 70);
+    border: solid 5px rgb(23, 42, 58);
+    padding: 5px;
+    border-radius: 20px;
+    color: rgb(196, 205, 212);    
+}
+
+
+
+/*detalle de los artistas*/
+
+.body_index{
+    font-family: 'Work Sans', sans-serif;
+    background-color:rgb(5, 9, 19 )
+}
+
+
+.h1_ad{
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+}
+
+.listAlbum{
+    display: flex;
+    list-style: none;
+    font-size: large;
+    flex-direction: column;
+    padding: 5px;
+
+    align-items: center;
+
+}
+
+
+
+.article_ad{
+    display: flex;
+}
+
+.flexsect{
+    display: flex;
+justify-content: center;
+}
+
+
+.art_ad{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.ar_pl{
+    margin: 20px;
+}
+
+.a_ad{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border: 5px solid white;
+    flex-wrap: wrap;
+    width: 700px;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    margin: 30px;
+    display: flex;
+    align-content: center;
+    border-radius: 20px;
+}
+
+.h3_ad{
+    text-align: center;
+    font-size: 40px;
+    }
+
+.h3album{
+    text-decoration: none;
+}
+
+.img_red{
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+}
+
+.p_da{
+    text-decoration: underline;
+    text-align: center;
+    padding: 15px;
+    font-size: larger;
+}
+
+.h4_da{
+    text-align: center;
+}
+
+.even_da{
+    border: 5px solid rgb(240, 79, 16);
+    padding: 10px;
+    border-radius: 20px ;
+    text-align: center;
+}
+
+
+/*resultados de búsqueda*/
+.container_search{
+    background-color: aliceblue;
+    padding: 100px;
+    margin: 70px;
+}
+
+.libox{
+    margin: 40px;
+}
+
+ul.search{
+    list-style-image: url(../img/magnifying-glass-solid.svg);
+}
+
+a.buscar{
+    color: black;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+
+
+/*viewport*/
+@media(max-width:420px){
+    /*Juli*/
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav{
+        flex-wrap:wrap;
+        font-size: 10px;
+        
+    }
+
+    .detalle_container{
+        margin: 50px;
+    }
+    .detalle_content{
+        padding: 20px;
+
+    }
+    /*Juli*/
+    
+    .m_pl{
+        flex-direction: column;
+    }
+
+    .container_search{
+        background-color: aliceblue;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .h1_sr{
+        margin: 15px;
+        font-size: medium;
+    }
+
+    .libox{
+        margin: 15px;
+    }
+
+    .a_ad{
+        width: 400px;
+    }
+
+    .img_red{
+        width: 350px;
+    }    
+
+    .art_pl{
+        text-decoration: none;
+        list-style: none;
+        border-radius: 20px;
+        font-size: 15px;
+        border: 5px solid rgb(0, 0, 0);
+        background-color:rgb(47, 47, 87) ;
+    }
+
+    .addsong_pl{
+        background-color: rgb(38, 55, 70);
+        border: solid 5px rgb(23, 42, 58);
+        border-radius: 20px;
+        color: rgb(196, 205, 212);    
+        font-size: small;
+    }
+
+    .h1_ad{
+        font-size: 20px;
+    }
+
+    .sectpl_h2{
+        display: flex;
+        flex-direction: row;
+   }
+
+    .h2vp{
+        color: rgb(196, 205, 212);    
+        margin: 15px;
+        opacity: 100%;
+        font-size: 24px;
+    }
+
+    .op{
+        opacity: 0%;
+        display: flex;
+
+    }
+    
+
+     /*ff*/
+    /*detallediscos*/
+    .bodydetalledisco{
+        background-size: 2cm;
+    }
+    .art_ad {
+        padding: 15px;
+    }
+    .h1art{
+        margin: 5px;
+        border-radius: 20px;
+        padding: 5px;
+    }
+    .h1ddd{
+        font-size: small;  
+    }
+    .spanff{
+        width: 280px;
+        margin: 5px;
+        height: 900px;
+        }
+    .h2ff{
+            display: flex;
+            justify-content: center;
+            font-size: small;
+            }
+    .h4ff{
+                text-align: center;
+                font-size: small;
+            }
+    .h3ff{
+            
+            font-size: small;
+            }
+    .h5ff{
+        font-size: small;
+    }
+    .imgdd{
+        display: flex;
+        justify-content: center;
+        width: 150px;     
+        height: 150px;
+    }
+
+    /*generos*/  
+
+ .arth1{
+     margin: 40px;
+
+    }
+.ffh1 {
+margin: 15px;
+font-size: medium;
+text-align: center;
+}
+.pgeneros{
+font-size: small;
+}
+
+.ffarticle{
+margin: 5px;
+padding: 5px;
+}
+
+.fondo{
+    background-size: 200px;
+}
+.ffsection{
+    flex-direction: row;
+}
+/*detallegenero*/
+
+
+.artdg{
+    margin: 5px;
+    padding: 5px;
+}
+.Dtitulo {
+    color: rgb(220, 215, 215);
+    font-size: medium;
+    text-align: center;
+}
+
+
+.articleff{
+    margin: 5px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.article2ff{
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px;
+    
+}
+.ffcul {
+    font-size: small;
+}
+.ffcul2{
+    font-size: small;
+}
+.pff{
+    font-size: 8px;
+}
+.imagenff{
+    width: 70px;
+    height: 70px;
+
+}
+
+.section2ff{
+   
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+}
