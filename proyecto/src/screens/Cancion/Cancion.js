@@ -65,7 +65,7 @@ export default class Cancion extends Component {
             this.state.info ? 
 
             <article className='container'>
-                <Link to={`/unalbum/id${this.state.info.album.id}`}></Link>
+              
                 <h4 className='body_track'>{this.state.info.title}</h4>
                 <p className='body_track'> {this.state.info.artist.name} </p>
                 <p className='body_track'> {this.state.info.album.title} </p>
