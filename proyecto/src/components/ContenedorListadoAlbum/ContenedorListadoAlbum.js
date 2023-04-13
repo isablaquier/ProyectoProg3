@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import ListadoMusica from '../ListadoMusica/ListadoMusica';
-import VerTodasCanciones from '../../screens/VerTodasCanciones/VerTodasCanciones';
 import ListadoAlbum from '../ListadoAlbum/ListadoAlbum';
 import {Link} from 'react-router-dom'
 
@@ -18,7 +16,7 @@ class ContenedorListadoAlbum extends Component {
                 <p>Ver Todas</p>
             </Link>
                 {
-                    this.props.data.length < 0 ?
+                    this.props.data.length <= 0 ?
                     <h1>Cargando...</h1>:
                     this.props.data.map((album, i) =>
                     <article key={i}>

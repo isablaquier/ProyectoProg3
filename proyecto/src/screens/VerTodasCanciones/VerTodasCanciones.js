@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import Buscador from '../../components/Buscador/Buscador';
 import ContenedorListado from '../../components/ContenedorListado/ContenedorListado';
-
+import BuscadorFiltra from '../../components/BuscadorFiltra/BuscadorFiltra';
 class VerTodasCanciones extends Component {
     constructor(props){
         super(props)
@@ -52,7 +51,8 @@ class VerTodasCanciones extends Component {
             <h3>Cargando...</h3> :  
             <>
             <h1>Ver Todas</h1>
-            <Buscador/>
+            <BuscadorFiltra actualizador={(data)=> this.actualizadorDeEstado(data)}
+            fuente= {this.state.backup}/>
             
             <ContenedorListado data={this.state.tracks}/>
             <button onClick={()=> this.llamarALaApi()}>Cargar más información</button>

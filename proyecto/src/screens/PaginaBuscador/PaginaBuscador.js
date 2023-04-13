@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
-//import Buscador from '../../components/Buscador/Buscador'
+import BuscadorFiltra from '../../components/BuscadorFiltra/BuscadorFiltra'
+
 class PaginaBuscador extends Component{
     render(){
         return(
             <div>
-               
+                <BuscadorFiltra/>
                 </div>
         )
     }
 }
+    
 export default PaginaBuscador
