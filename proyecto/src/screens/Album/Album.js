@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles.css'
 
 class Album extends Component {
     constructor(props) {
@@ -76,17 +77,19 @@ class Album extends Component {
         if (this.state.info) {
             console.log(this.state.info);
             return (
-                <div>
-                  
-                    <img src={this.state.info.cover_medium} alt={this.state.info.title} />
-                    <h2>{this.state.info.title}</h2>
-                    <h3>{this.state.info.artist.name}</h3>
-                    <h4>{this.state.info.genres.data[0].name}</h4>
-                    <h5>Fecha de publicacion: {this.state.info.release_date}</h5>
-                    <ul>
+                <div className='container'>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                    <img className='imagen' src={this.state.info.cover_medium} alt={this.state.info.title} />
+                    <h2 className='title'>{this.state.info.title}</h2>
+                    <h3 className='title' >{this.state.info.artist.name}</h3> 
+                    <h4 className='title' >{this.state.info.genres.data[0].name}</h4>
+                    <h5 className='title' >Fecha de publicacion: {this.state.info.release_date}</h5>
+                    <ul className='lista' >
                         {this.state.info.tracks.data.map(track => {
                             return (
-                                <li>{track.title}</li>
+                                <ul>{track.title}</ul>
                             )
                         })}
                     </ul>
