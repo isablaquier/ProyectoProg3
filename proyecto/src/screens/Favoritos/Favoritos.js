@@ -46,8 +46,14 @@ this.state={
             //Guardo la info en un array
              let data = info //Te te esta guardon un objeto con toda la info
              arrayAlbum = this.state.favoritosAlbum
-             arrayAlbum.push(data);
-            this.setState({favoritosAlbum: arrayAlbum}, console.log(this.state.favoritosAlbum, 'hola'))
+
+             if(!data.error){
+                arrayAlbum.push(data);
+                console.log('No tengo error');
+                this.setState({favoritosAlbum: arrayAlbum})
+             }else{
+                console.log(data,'Si tengo error');
+             }
         })
         })
         }
