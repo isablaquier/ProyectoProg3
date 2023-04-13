@@ -11,7 +11,10 @@ class ContenedorListadoAlbum extends Component {
         return(
             <section className= 'content'>
                 <section>
+
                     <h2>Albums</h2>
+            
+                    {console.log(this.props, 'contenedor listado')}
                     <Link to='/vertodosAlbumes'> 
                 <p>Ver Todas</p>
             </Link>

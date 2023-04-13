@@ -29,6 +29,7 @@ class ListadoAlbum extends Component {
 
         componentDidMount(){
             let storage = localStorage.getItem('favoritos')
+            console.log(this.props, 'props');
             let storageAArray = JSON.parse(storage)
         
             if(storageAArray !== null){
@@ -79,6 +80,7 @@ class ListadoAlbum extends Component {
         return (
             <section className="content">
             <article>
+              {console.log(this.props.info,'jajaj')}
                 <Link to = {`/unalbum/id/${this.props.info.id}`}>
                     <img src={this.props.info.cover}></img>
                 </Link>
